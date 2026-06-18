@@ -22,7 +22,6 @@ binds {
     Mod+Period                          hotkey-overlay-title="Open Emoji Picker: launcher emoji" { spawn-sh "qs -c noctalia-shell ipc call launcher emoji"; }
     Mod+Shift+S                         hotkey-overlay-title="Take Screenshot: screenshot" { spawn-sh "qs -c noctalia-shell ipc call plugin:screenshot takeScreenshot region";}
     Mod+Z                               hotkey-overlay-title="Open Zed: zed" { spawn-sh "zed"; }
-    Mod+M                               hotkey-overlay-title="Open MySQL: mysql" { spawn-sh "~/Downloads/mysql-8.0.45-linux-glibc2.28-x86_64/bin/mysqld --datadir=/home/kizuto/mysql-data --socket=/tmp/mysql.sock"; }
     Mod+S                               {spawn-sh "steam -cef-disable-gpu";}
     // ============================================
 

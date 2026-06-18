@@ -10,16 +10,16 @@ binds {
 
     // ─── Applications ───
     Mod+Return                          hotkey-overlay-title="Open Terminal: Alacritty" { spawn "alacritty"; }
-    ALT+Space                               hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    ALT+Space                           hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+B                               hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; }
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    ALT+f4                              hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
     // ===================Custom===================
     Mod+Shift+ESCAPE                    hotkey-overlay-title="Show Keybindings: keybind-cheatsheet" { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
     CTRL+Shift+ESCAPE                   hotkey-overlay-title="Show System Monitor: systemMonitor" { spawn-sh "qs -c noctalia-shell ipc call systemMonitor toggle"; }
     Mod+V                               hotkey-overlay-title="Show Clipboard: clipper" { spawn-sh "qs -c noctalia-shell ipc call plugin:clipper toggle";}
     // If clipper wont work : type "pkill -9 wl-paste; wl-paste --watch cliphist store &".
-    //Mod+Previous                        { spawn-sh "qs -c noctalia-shell ipc call launcher emoji"; }
+    Mod+Period                          hotkey-overlay-title="Open Emoji Picker: launcher emoji" { spawn-sh "qs -c noctalia-shell ipc call launcher emoji"; }
     Mod+Shift+S                         hotkey-overlay-title="Take Screenshot: screenshot" { spawn-sh "qs -c noctalia-shell ipc call plugin:screenshot takeScreenshot region";}
     Mod+Z                               hotkey-overlay-title="Open Zed: zed" { spawn-sh "zed"; }
     Mod+M                               hotkey-overlay-title="Open MySQL: mysql" { spawn-sh "~/Downloads/mysql-8.0.45-linux-glibc2.28-x86_64/bin/mysqld --datadir=/home/kizuto/mysql-data --socket=/tmp/mysql.sock"; }

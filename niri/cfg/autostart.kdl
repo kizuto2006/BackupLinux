@@ -3,4 +3,6 @@
 
     spawn-sh-at-startup "qs -c noctalia-shell"
     spawn-sh-at-startup "fcitx5"
-    spawn-sh-at-startup "firefox & steam -cef-disable-gpu -silent"
+    spawn-sh-at-startup "firefox"
+    spawn-at-startup "swayidle" "-w" "before-sleep" "env WAYLAND_DISPLAY=wayland-1 qs -c 'noctalia-shell ipc call lockScreen lock'"
+    spawn-sh-at-startup "flatpak run org.jeffvli.feishin"

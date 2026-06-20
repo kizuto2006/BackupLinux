@@ -1,0 +1,13 @@
+[INFORMATION]
+Projects=Datejust_ADP;Explorer_ADU;Metis_ADP;Himalia_ADH;
+OSs=Windows Next All X64;
+WHQL=Y,
+ProviderFullName=Intel
+SelectedDriverType=Only Upload Source
+Installer=%RELATIVE_PATH%\InstallDriver.cmd
+Parameters=
+InfFiles=
+DriverUtilityInstaller=
+DriverUtilityParameters=
+UWPSourceFolder=
+UWPInstaller=

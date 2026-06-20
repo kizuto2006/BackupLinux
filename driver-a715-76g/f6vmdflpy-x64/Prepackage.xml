@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModuleInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ModulePN>MOD01?????00??????</ModulePN>
+  <Creator PN="01" Name="Acer-HQ1" />
+  <Type PN="" Name="Drivers" />
+  <Module PN="" Name="Intel Intel Rapid Storage Technology WinPERE Drivers" Alias="" GUID="" Serial="WinPERE Drivers" Provider="Intel" Class="Intel Rapid Storage Technology" />
+  <WOS PN="93" Sku="WN All" CPU="X64" />
+  <Lang>All language</Lang>
+  <ModuleVersion>v19.2.0.1003</ModuleVersion>
+  <DriverVersion>v19.2.0.1003</DriverVersion>
+  <OptionVersion>InstallDriver.cmd</OptionVersion>
+  <ProjectCodeName>NULL</ProjectCodeName>
+  <OdmName>NBQCI</OdmName>
+  <ModuleTimeout>30</ModuleTimeout>
+  <InstallPreiod>UserAlaunch</InstallPreiod>
+  <Reboot>False</Reboot>
+  <Delete>False</Delete>
+  <ReinstallProcessList>
+    <Process Country="" OS-Language="" OS-Sku="" Check="" Timeout="0" RetCode="-" Params="" Exec="%RELATIVE_PATH%\InstallDriver.cmd" Order="00" Period="" />
+  </ReinstallProcessList>
+  <AutoRun>True</AutoRun>
+  <InstallPath />
+  <Description />
+  <ProcessList>
+    <Process Country="" OS-Language="" OS-Sku="" Check="False" Timeout="30" RetCode="-" Params="" Exec="%RELATIVE_PATH%\InstallDriver.cmd" Order="00" Period="" />
+  </ProcessList>
+  <RegItemList />
+  <ModuleProperty>RCD,STCD,RSCD</ModuleProperty>
+  <HWIDs>MUST</HWIDs>
+  <AutoCheckHWID>False</AutoCheckHWID>
+  <CheckRemove>False</CheckRemove>
+  <MVPKernelVersion>2.0.7.2</MVPKernelVersion>
+  <MVPUIVersion>2.0.8.4</MVPUIVersion>
+  <LOB>Notebook</LOB>
+</ModuleInfo>

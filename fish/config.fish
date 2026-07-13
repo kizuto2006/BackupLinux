@@ -24,6 +24,8 @@ end
 alias check="niri validate"
 alias reboot="sudo reboot now"
 alias xppen='QT_QPA_PLATFORM=xcb /usr/lib/pentablet/PenTablet.sh'
+alias nixconfig="sudo nano /etc/nixos/configuration.nix"
+alias nixswitch="sudo nixos-rebuild switch --flake /etc/nixos#nixos"
 function homeserver
     # Nếu chỉ gõ "homeserver" không có tham số -> Chui thẳng vào SSH
     if test (count $argv) -eq 0

@@ -1,0 +1,5 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export OLLAMA_HOST:http\x3a//100\x2e90\x2e216\x2e40\x3a11434
+SETUVAR __fish_initialized:4300
+SETUVAR fish_user_paths:/home/kizuto/\x2elocal/bin

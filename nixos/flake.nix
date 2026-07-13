@@ -20,7 +20,7 @@
       system = "x86_64-linux";
 
       modules = [
-        ./configuration.nix
+        ./hosts/acer-a715/configuration.nix
         home-manager.nixosModules.home-manager
 
         {

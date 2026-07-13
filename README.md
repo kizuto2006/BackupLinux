@@ -8,20 +8,20 @@
 
 Clone repo on Nixos branch:
 
-```
+```bash
 git clone --branch Nixos --single-branch https://github.com/kizuto2006/BackupLinux.git
 ```
 
 Go to folder and run shell:
 
-```
+```bash
 cd BackupLinux
 chmod +x nix_build.sh
 ./nix_build.sh
 ```
 Quick install:
 
-```
+```bash
 git clone --branch Nixos --single-branch \
   https://github.com/kizuto2006/BackupLinux.git
 

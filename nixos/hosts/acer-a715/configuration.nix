@@ -108,8 +108,10 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-  # Set fish
+  # Install fish
   programs.fish.enable = true;
+  # Install starship
+  programs.starship.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -125,14 +127,12 @@
   fish
   zed-editor
   ghostty
+  discord
   nautilus
   bottom
-  #niri optional
-  fuzzel
-  waybar
-  grim
-  slurp
+  cliphist
   wl-clipboard
+  wtype
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -271,7 +271,7 @@ main() {
     printf '\n'
 
     printf 'NixOS đã được build từ:\n'
-    printf '  %s#%s\n' "$FLAKE_DIR" "$CONFIG_NAME"
+    printf '  path:%s#%s\n' "$FLAKE_DIR" "$CONFIG_NAME"
 
     printf '\nDotfiles đã được liên kết:\n'
     printf '  %s/fish\n' "$CONFIG_HOME"

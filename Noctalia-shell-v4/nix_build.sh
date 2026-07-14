@@ -14,7 +14,12 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 
 REPO_DIR="$SCRIPT_DIR"
 FLAKE_DIR="$REPO_DIR/nixos"
+SYSTEM_HARDWARE_CONFIG="/etc/nixos/hardware-configuration.nix"
+REPO_HARDWARE_CONFIG="$FLAKE_DIR/hosts/acer-a715/hardware-configuration.nix"
 
+# Bật flakes kể cả khi hệ thống hiện tại chưa khai báo vĩnh viễn.
+export NIX_CONFIG="${NIX_CONFIG:+$NIX_CONFIG
+}experimental-features = nix-command flakes"
 # Mặc định là ~/.config.
 CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
@@ -86,6 +91,27 @@ check_repository() {
     success "Cấu trúc repository hợp lệ"
 }
 
+sync_hardware_config() {
+    CURRENT_STEP="đồng bộ hardware configuration"
+
+    [[ -f "$SYSTEM_HARDWARE_CONFIG" ]] \
+        || die "Không tìm thấy $SYSTEM_HARDWARE_CONFIG. Hãy chạy nixos-generate-config trước."
+
+    mkdir -p "$(dirname -- "$REPO_HARDWARE_CONFIG")"
+
+    info "Đang lấy hardware configuration từ hệ thống hiện tại:"
+    printf '    %s\n' "$SYSTEM_HARDWARE_CONFIG"
+    printf ' -> %s\n' "$REPO_HARDWARE_CONFIG"
+
+    sudo cp -- "$SYSTEM_HARDWARE_CONFIG" "$REPO_HARDWARE_CONFIG"
+    sudo chown "$(id -u):$(id -g)" "$REPO_HARDWARE_CONFIG"
+
+    cmp -s "$SYSTEM_HARDWARE_CONFIG" "$REPO_HARDWARE_CONFIG" \
+        || die "Hardware configuration sau khi copy không khớp."
+
+    success "Đã đồng bộ hardware configuration của máy hiện tại"
+}
+
 check_git_status() {
     CURRENT_STEP="kiểm tra trạng thái Git"
 
@@ -110,7 +136,7 @@ check_flake() {
 
     info "Đang kiểm tra flake..."
 
-    nix flake check "$FLAKE_DIR" --no-build
+    nix flake check "path:$FLAKE_DIR" --no-build
 
     success "Flake hợp lệ"
 }
@@ -121,8 +147,9 @@ rebuild_nixos() {
     info "Đang build và switch:"
     printf '    %s#%s\n' "$FLAKE_DIR" "$CONFIG_NAME"
 
-    sudo nixos-rebuild switch \
-        --flake "$FLAKE_DIR#$CONFIG_NAME"
+    sudo env NIX_CONFIG="$NIX_CONFIG" \
+	nixos-rebuild switch \
+	--flake "path:$FLAKE_DIR#$CONFIG_NAME"
 
     success "NixOS đã build và switch thành công"
 }
@@ -232,6 +259,7 @@ main() {
     done
 
     check_repository
+    sync_hardware_config
     check_git_status
     check_flake
     rebuild_nixos

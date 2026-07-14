@@ -1,0 +1,3 @@
+
+# Machine-specific NixOS hardware configuration
+nixos/hosts/acer-a715/hardware-configuration.nix

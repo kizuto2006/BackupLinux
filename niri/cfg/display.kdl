@@ -4,7 +4,7 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 
 output "HDMI-A-1" {
-    mode "1920x1080@60.000"
+    mode "1920x1080@120.000"
     position x=0 y=0
     focus-at-startup
 }

@@ -5,25 +5,10 @@ if status is-interactive
     fastfetch
     echo ""
     set fish_greeting "  Đây là máy chính"
-
-    # 1. Start the SSH agent if it isn't already running
-    if test -z "$SSH_AUTH_SOCK"
-        # Using ssh-agent -c (csh format) works well with Fish's eval
-        eval (ssh-agent -c | grep -v echo)
-    end
-
-    # 2. Auto-add the SSH key only if the agent is empty AND the file is valid
-    if test -f ~/.ssh/id_ed25519
-        if not ssh-add -l > /dev/null 2>&1
-            # 2>&1 suppresses the warning block in case permissions aren't fixed yet
-            ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
-        end
-    end
 end
 
 alias check="niri validate"
 alias reboot="sudo reboot now"
-alias xppen='QT_QPA_PLATFORM=xcb /usr/lib/pentablet/PenTablet.sh'
 alias cl='clear'
 function homeserver
     # Nếu chỉ gõ "homeserver" không có tham số -> Chui thẳng vào SSH
@@ -73,18 +58,3 @@ function homeserver
             echo "  👉 homeserver jellyfin start|stop (Bật/tắt hệ thống stream phim)"
     end
 end
-
-
-function packettracer
-    QT_QPA_PLATFORM=xcb command packettracer $argv
-end
-
-# pnpm
-set -gx PNPM_HOME "/home/kizuto/.local/share/pnpm"
-if not string match -q -- "$PNPM_HOME/bin" $PATH
-  set -gx PATH "$PNPM_HOME/bin" $PATH
-end
-# pnpm end
-
-# opencode
-fish_add_path /home/kizuto/.opencode/bin

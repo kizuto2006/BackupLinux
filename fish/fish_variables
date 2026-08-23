@@ -3,8 +3,9 @@
 SETUVAR --export OLLAMA_HOST:http\x3a//100\x2e90\x2e216\x2e40\x3a11434
 SETUVAR --export --path PATH:/home/kizuto/\x2ecargo/bin\x1e/home/kizuto/\x2elocal/share/pnpm/bin\x1e/home/kizuto/\x2elocal/share/pnpm\x1e/usr/local/sbin\x1e/usr/sbin\x1e/sbin\x1e/home/kizuto/\x2elocal/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/local/games\x1e/usr/games
 SETUVAR --export PNPM_HOME:/home/kizuto/\x2elocal/share/pnpm
+SETUVAR --export THEOS:/home/kizuto/theos
 SETUVAR __fish_initialized:4300
-SETUVAR fish_user_paths:/home/kizuto/\x2eopencode/bin\x1e/home/kizuto/\x2ecargo/bin\x1e/home/kizuto/\x2elocal/share/pnpm\x1e/usr/local/sbin\x1e/usr/sbin\x1e/sbin\x1e/home/kizuto/\x2elocal/bin
+SETUVAR fish_user_paths:/home/kizuto/\x2eopencode/bin\x1e/home/kizuto/\x2ecargo/bin\x1e/home/kizuto/\x2elocal/share/pnpm\x1e/usr/local/sbin\x1e/usr/sbin\x1e/sbin
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
 SETUVAR pure_color_at_sign:pure_color_mute

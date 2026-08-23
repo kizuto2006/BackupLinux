@@ -1,0 +1,218 @@
+[bar.default]
+background_opacity = 0.39999999105930328
+center = [ "group:g2" ]
+end = [ "group:g3", "group:g1" ]
+margin_ends = 0
+radius = 0
+start = [ "group:g4" ]
+
+    [bar.default.dead_zone.actions]
+    left = "panel-toggle control-center home"
+    middle = "media toggle"
+    right = "settings-toggle"
+    scroll_down = "workspace-switch next"
+    scroll_up = "workspace-switch prev"
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "network", "battery", "brightness", "volume" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "launcher", "wallpaper", "widget_2", "clock", "media" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g3"
+    members = [ "status", "tray", "notifications" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g4"
+    members = [ "keybinds", "gamermode", "widget", "workspaces", "active_window" ]
+    opacity = 1.0
+    padding = 6.0
+
+[dock]
+reserve_space = false
+smart_auto_hide = true
+
+[location]
+address = "Hanoi"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[plugin_settings."blackbartblues/clipper"]
+auto_paste = true
+
+[plugins]
+enabled = [
+    "yuuto/calculator",
+    "kenn/keybind-cheatsheet",
+    "davemhammer/tailscale",
+    "weinguyen/procmon",
+    "yuuto/arch-updater",
+    "nomadcxx/gamer-mode",
+    "blackbartblues/clipper"
+]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+    [[plugins.source]]
+    kind = "path"
+    location = "/home/kizuto/Downloads/Linix-Config/noctalia-plugin"
+    name = "Toan-clipper"
+
+[shell]
+avatar_path = "/home/kizuto/avatar.jpg"
+lang = "vi"
+polkit_agent = true
+telemetry_enabled = true
+
+    [shell.launcher]
+    compact = true
+
+    [shell.panel]
+    launcher_position = "auto"
+    open_near_click_control_center = true
+    transparency_mode = "glass"
+
+    [shell.screenshot]
+    save_to_file = false
+
+[theme]
+builtin = "Catppuccin"
+community_palette = "Catppuccin Frappe Lavender"
+pure_black_dark = true
+source = "community"
+
+    [theme.templates]
+    builtin_ids = [ "alacritty", "cava", "gtk3", "gtk4", "niri", "qt", "starship" ]
+    community_ids = [ "pywalfox", "discord", "telegram", "vscode", "zed" ]
+
+[wallpaper.default]
+path = "/home/kizuto/Pictures/Wallpapers/pixel-earth.png"
+
+[wallpaper.last]
+path = "/home/kizuto/Pictures/Wallpapers/pixel-earth.png"
+
+[wallpaper.monitors.HDMI-A-1]
+path = "/home/kizuto/Pictures/Wallpapers/shadow-shape-holo.jpeg"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/kizuto/Pictures/Wallpapers/pixel-earth.png"
+
+[widget.battery]
+anchor = true
+
+[widget.clock]
+anchor = true
+
+[widget.gamermode]
+anchor = true
+type = "nomadcxx/gamer-mode:gamermode"
+
+[widget.keybinds]
+type = "kenn/keybind-cheatsheet:keybinds"
+
+[widget.status]
+type = "davemhammer/tailscale:status"
+
+[widget.tray]
+anchor = true
+
+[widget.widget]
+anchor = true
+type = "weinguyen/procmon:widget"
+
+[widget.widget_2]
+type = "yuuto/arch-updater:widget"
+
+[widget.workspaces]
+anchor = true

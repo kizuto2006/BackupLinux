@@ -11,16 +11,17 @@ binds {
     // ─── Applications ───
     Mod+Return                          hotkey-overlay-title="Open Terminal: Alacritty" { spawn "alacritty"; }
     ALT+Space                           hotkey-overlay-title="Open App Launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
-    Mod+B                               hotkey-overlay-title="Open Browser: Librewolf" { spawn "librewolf"; }
+    Mod+B                               hotkey-overlay-title="Open Browser: Edge" { spawn "microsoft-edge-stable"; }
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "noctalia msg session lock"; }
     ALT+f4                              hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; }
     // ===================Custom===================
     Mod+Shift+ESCAPE                    hotkey-overlay-title="Show Keybindings: keybind-cheatsheet" { spawn-sh "noctalia msg panel-toggle kenn/keybind-cheatsheet"; }
     //CTRL+Shift+ESCAPE                   hotkey-overlay-title="Show System Monitor: systemMonitor" { spawn-sh "qs -c noctalia-shell ipc call systemMonitor toggle"; }
-    Mod+V                               hotkey-overlay-title="Show Clipboard" { spawn-sh "noctalia msg panel-toggle clipboard";}
+    Mod+V                               hotkey-overlay-title="Show Clipboard: Clipper" { spawn-sh "noctalia msg panel-toggle blackbartblues/clipper:panel";}
     Mod+Period                          hotkey-overlay-title="Open Emoji Picker: launcher emoji" { spawn-sh "noctalia msg panel-toggle launcher '/emo'"; }
     Mod+Shift+S                         hotkey-overlay-title="Take Screenshot" { spawn-sh "noctalia msg screenshot-region";}
-    Mod+Z                               hotkey-overlay-title="Open Zed: zed" { spawn-sh "zeditor"; }
+    Mod+Z                               hotkey-overlay-title="Open: zed" { spawn-sh "zeditor"; }
+    Mod+C				hotkey-overlay-title="Open: VScode" { spawn-sh "code"; }
     Mod+W                               { spawn-sh "noctalia msg panel-toggle wallpaper";}
     // ============================================
 

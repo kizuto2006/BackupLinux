@@ -2,13 +2,15 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     starship init fish | source
     #set -x TERM xterm-256color
-    fastfetch
+    #Check term program, if not in vscode => open fastfetch 
+    if not set -q TERM_PROGRAM; or test "$TERM_PROGRAM" != "vscode"
+	fastfetch
+    end
     echo ""
     set fish_greeting "  Đây là máy chính"
 end
 
 alias check="niri validate"
-alias reboot="sudo reboot now"
 alias cl='clear'
 function homeserver
     # Nếu chỉ gõ "homeserver" không có tham số -> Chui thẳng vào SSH
@@ -48,7 +50,7 @@ function homeserver
 
 	case tailnet
 	    clear
-	    ssh kizuto@100.90.216.40 
+	    ssh kizuto@100.105.30.103 
 
         case '*'
             echo "❌ Lệnh không hợp lệ!"

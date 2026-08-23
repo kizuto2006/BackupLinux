@@ -1,9 +1,9 @@
 // ────────────── Startup Applications ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
-    spawn-sh-at-startup "qs -c noctalia-shell"
+    spawn-sh-at-startup "noctalia"
     spawn-sh-at-startup "fcitx5"
-    spawn-sh-at-startup "firefox"
-    spawn-at-startup "swayidle" "-w" \
-        "before-sleep" "qs -c noctalia-shell ipc call lockScreen lock" \
-        "after-resume" "qs -c noctalia-shell ipc call lockScreen lock"
+    spawn-sh-at-startup "microsoft-edge-stable"
+    //spawn-at-startup "swayidle" "-w" \
+    //    "before-sleep" "qs -c noctalia-shell ipc call lockScreen lock" \
+    //    "after-resume" "qs -c noctalia-shell ipc call lockScreen lock"

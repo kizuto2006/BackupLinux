@@ -1,0 +1,17 @@
+# ==========================================
+# CẤU HÌNH SWAY CHÍNH
+# ==========================================
+
+# Định nghĩa phím bấm cơ bản
+set $mod Mod4
+set $alt Mod1
+set $term alacritty
+
+# Nhúng các file cấu hình con
+include ./cfg/autostart.conf
+include ./cfg/display.conf
+include ./cfg/input.conf
+include ./cfg/keybinds.conf
+
+# Nhúng thư mục mặc định của Sway (nếu có các module mở rộng)
+include /etc/sway/config.d/*

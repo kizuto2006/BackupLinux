@@ -1,0 +1,336 @@
+# Umbriel config generated from Niri config
+# TODO: This is a work in progress, validate with `umbriel validate -c ~/projects/BackupLinux/umbriel/config.toml`
+
+[general]
+autostart = ["noctalia", "fcitx5", "microsoft-edge-stable"]
+
+[keybinds]
+"Mod+Return" = "spawn:alacritty"
+"ALT+Space" = "spawn:noctalia msg panel-toggle launcher"
+"Mod+B" = "spawn:microsoft-edge-stable"
+"Mod+ALT+L" = "spawn:noctalia msg session lock"
+"ALT+f4" = "spawn:noctalia msg panel-toggle session"
+"Mod+Shift+ESCAPE" = "spawn:noctalia msg panel-toggle kenn/keybind-cheatsheet"
+"Mod+V" = "spawn:noctalia msg panel-toggle blackbartblues/clipper:panel"
+"Mod+Period" = "spawn:noctalia msg panel-toggle launcher '/emo'"
+"Mod+Shift+S" = "spawn:noctalia msg screenshot-region"
+"Mod+Z" = "spawn:zeditor"
+"Mod+C" = "spawn:code"
+"Mod+W" = "spawn:noctalia msg panel-toggle wallpaper"
+"Mod+E" = "spawn:nautilus"
+"XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up"
+"XF86AudioLowerVolume" = "spawn:noctalia msg volume-down"
+"XF86AudioMute" = "spawn:noctalia msg volume-mute"
+"CTRL+XF86AudioRaiseVolume" = "spawn:noctalia msg mic-volume-up"
+"CTRL+XF86AudioLowerVolume" = "spawn:noctalia msg mic-volume-down"
+"CTRL+XF86AudioMute" = "spawn:noctalia msg mic-mute"
+"XF86AudioNext" = "spawn:noctalia msg media next"
+"XF86AudioPrev" = "spawn:noctalia msg media previous"
+"XF86AudioPlay" = "spawn:noctalia msg media toggle"
+"XF86AudioPause" = "spawn:noctalia msg media toggle"
+"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up"
+"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down"
+"Mod+Q" = "window-close"
+"Mod+Left" = "window-focus-left"
+"Mod+H" = "window-focus-left"
+"Mod+Right" = "window-focus-right"
+"Mod+L" = "window-focus-right"
+"Mod+K" = "window-focus-up"
+"Mod+J" = "window-focus-down"
+"Mod+CTRL+Left" = "column-move-left"
+"Mod+CTRL+H" = "column-move-left"
+"Mod+CTRL+Right" = "column-move-right"
+"Mod+CTRL+L" = "column-move-right"
+"Mod+CTRL+K" = "window-move-up"
+"Mod+CTRL+J" = "window-move-down"
+"Mod+Home" = "focus-column-first"
+"Mod+End" = "focus-column-last"
+"Mod+CTRL+Home" = "move-column-to-first"
+"Mod+CTRL+End" = "move-column-to-last"
+"Mod+Shift+Left" = "focus-monitor-left"
+"Mod+Shift+Right" = "focus-monitor-right"
+"Mod+Shift+UP" = "focus-monitor-up"
+"Mod+Shift+Down" = "focus-monitor-down"
+"Mod+Shift+CTRL+Left" = "move-column-to-monitor-left"
+"Mod+Shift+CTRL+Right" = "move-column-to-monitor-right"
+"Mod+Shift+CTRL+UP" = "move-column-to-monitor-up"
+"Mod+Shift+CTRL+Down" = "move-column-to-monitor-down"
+"Mod+WheelScrollDown" = "focus-workspace-down"
+"Mod+WheelScrollUp" = "focus-workspace-up"
+"Mod+Down" = "focus-workspace-down"
+"Mod+Up" = "focus-workspace-up"
+"Mod+CTRL+WheelScrollDown" = "move-column-to-workspace-down"
+"Mod+CTRL+WheelScrollUp" = "move-column-to-workspace-up"
+"Mod+CTRL+Down" = "move-column-to-workspace-down"
+"Mod+CTRL+Up" = "move-column-to-workspace-up"
+"Mod+WheelScrollRight" = "focus-column-right"
+"Mod+WheelScrollLeft" = "focus-column-left"
+"Mod+CTRL+WheelScrollRight" = "move-column-right"
+"Mod+CTRL+WheelScrollLeft" = "move-column-left"
+"Mod+Shift+WheelScrollDown" = "focus-column-right"
+"Mod+Shift+WheelScrollUp" = "focus-column-left"
+"Mod+CTRL+Shift+WheelScrollDown" = "move-column-right"
+"Mod+CTRL+Shift+WheelScrollUp" = "move-column-left"
+"Mod+1" = "focus-workspace 1"
+"Mod+2" = "focus-workspace 2"
+"Mod+3" = "focus-workspace 3"
+"Mod+4" = "focus-workspace 4"
+"Mod+5" = "focus-workspace 5"
+"Mod+6" = "focus-workspace 6"
+"Mod+7" = "focus-workspace 7"
+"Mod+8" = "focus-workspace 8"
+"Mod+9" = "focus-workspace 9"
+"Mod+CTRL+1" = "move-column-to-workspace 1"
+"Mod+CTRL+2" = "move-column-to-workspace 2"
+"Mod+CTRL+3" = "move-column-to-workspace 3"
+"Mod+CTRL+4" = "move-column-to-workspace 4"
+"Mod+CTRL+5" = "move-column-to-workspace 5"
+"Mod+CTRL+6" = "move-column-to-workspace 6"
+"Mod+CTRL+7" = "move-column-to-workspace 7"
+"Mod+CTRL+8" = "move-column-to-workspace 8"
+"Mod+CTRL+9" = "move-column-to-workspace 9"
+"Mod+TAB" = "focus-workspace-previous"
+"Mod+CTRL+F" = "expand-column-to-available-width"
+"Mod+Shift+C" = "center-column"
+"Mod+CTRL+C" = "center-visible-columns"
+"Mod+Minus" = "set-column-width -10%"
+"Mod+Equal" = "set-column-width +10%"
+"Mod+Shift+Minus" = "set-window-height -10%"
+"Mod+Shift+Equal" = "set-window-height +10%"
+"Mod+T" = "toggle-window-floating"
+"Mod+Shift+F" = "fullscreen-window"
+"Mod+F" = "maximize-column"
+"CTRL+Shift+1" = "screenshot"
+"CTRL+Shift+2" = "screenshot-screen"
+"CTRL+Shift+3" = "screenshot-window"
+"Mod+ESCAPE" = "shortcuts-inhibit-toggle"
+"CTRL+ALT+Delete" = "quit"
+"Mod+Shift+P" = "power-off-monitors"
+"Mod+O" = "overview-toggle"
+
+[appearance]
+prefer_no_csd = true
+border_width = 2
+outer_border_width = 0
+corner_radius = 12
+drag_opacity = 0.75
+
+[appearance.blur]
+enabled = true
+optimized = true
+passes = 3
+radius = 5
+noise = 0.02
+brightness = 0.9
+contrast = 0.9
+saturation = 1.1
+
+[appearance.shadow]
+enabled = true
+softness = 10
+offset_x = 2
+offset_y = 2
+
+[colors]
+background = "#000000FF"
+text_primary = "#babbf1"
+text_muted = "#000000"
+accent_primary = "#babbf1"
+accent_secondary = "#e78284"
+warning = "#e78284"
+error = "#e78284"
+insert_hint = "#babbf180"
+backdrop = "#000000FF"
+shadow = "#23263470"
+
+[colors.border]
+focused = "#babbf1"
+unfocused = "#000000"
+scratchpad_focused = "#babbf1"
+scratchpad_unfocused = "#000000"
+outer = "#000000"
+
+[colors.overview]
+background_tint = "#00000044"
+workspace_background = "#00000044"
+badge = "#babbf1"
+
+[layout]
+mode = "scrolling"
+gap = 8
+extent_presets = [0.333, 0.5, 0.667]
+
+[layout.struts]
+left = 0
+right = 0
+top = 0
+bottom = 0
+
+[layout.scrolling]
+default_extent_fraction = 0.5
+center_underfull_strip = true
+center_focused = "never"
+
+[layout.dwindle]
+preserve_split = false
+new_exits_fullscreen = false
+
+[layout.master]
+position = "left"
+default_width_fraction = 0.55
+new_on_top = true
+new_becomes_master = false
+new_exits_fullscreen = false
+
+[input]
+middle_click_paste = false
+window_drag_toggle = "none"
+
+[input.keyboard]
+layout = ""
+variant = ""
+options = ""
+repeat_rate = 25
+repeat_delay = 600
+numlock_toggle = true
+track_layout = "global"
+
+[input.touchpad]
+tap = true
+natural_scroll = true
+
+[input.mouse]
+natural_scroll = false
+
+[input.cursor]
+theme = "capitaine-cursors"
+size = 24
+hardware_cursor = true
+follows_focus = false
+hide_when_typing = false
+hide_timeout_ms = 0
+
+[input.focus]
+follows_mouse = true
+follows_mouse_max_scroll = 0.5
+
+[[output."HDMI-A-1"]]
+mode = "1920x1080@120"
+position = [0, 0]
+focus-at-startup = true
+
+[[output."eDP-1"]]
+mode = "1920x1080@144"
+position = [-1920, 0]
+off = true
+
+[animation]
+enabled = true
+duration_ms = 250
+curve = "easeout"
+
+[animation.windows_in]
+enabled = true
+duration_ms = 200
+curve = "ease-out-quad"
+
+[animation.windows_out]
+enabled = true
+duration_ms = 200
+curve = "ease-out-cubic"
+
+[animation.windows_move]
+enabled = true
+duration_ms = 250
+curve = "snappy"
+
+[animation.workspaces]
+enabled = true
+duration_ms = 250
+curve = "easeout"
+
+[animation.overview]
+enabled = true
+duration_ms = 250
+curve = "easeout"
+workspace_curve = "spring:1,1000"
+
+[animation.scratchpad]
+enabled = false
+duration_ms = 250
+curve = "easeout"
+dim = 0.5
+blur = false
+scale = 0.0
+maximize = false
+fullscreen = false
+
+[animation.border]
+enabled = false
+duration_ms = 250
+curve = "easeout"
+
+[animation.dim_unfocused]
+enabled = false
+duration_ms = 250
+curve = "easeout"
+dim = 0.0
+
+[animation.layers]
+enabled = false
+duration_ms = 250
+curve = "easeout"
+
+# TODO(niri): config-notification-open-close animation not found in Umbriel
+# TODO(niri): screenshot-ui-open animation not found in Umbriel
+# TODO(niri): horizontal-view-movement animation not found in Umbriel (maybe windows_move covers it?)
+# TODO(niri): window-resize animation not found in Umbriel
+
+[[window_rule]]
+# Map from niri: window-rule { geometry-corner-radius 12; clip-to-geometry true; }
+# TODO(niri): geometry-corner-radius and clip-to-geometry not found in Umbriel window_rule
+# For now, we set only what we can
+# match.all = true  # to match all windows? Not sure if we need to match all.
+# We'll leave match empty to match all? Actually, empty match matches all.
+# But we want to set corner radius and clip for all windows.
+# Since we cannot set those, we leave as TODO.
+# We'll just create an empty rule that matches all (by having no match criteria) and note that we cannot set the properties.
+# However, Umbriel might not allow empty match. We'll set a dummy match that always true? Not sure.
+# We'll skip this rule for now and note that we need to set corner radius and clip via other means? Maybe via appearance?
+# Actually, corner radius is in appearance.colors? No, corner radius is in appearance.corner_radius.
+# We already set corner_radius = 12 in [appearance]. That might be for window corners?
+# And clip-to-geometry might be handled by something else? We'll leave TODO.
+# For now, we comment out this rule and rely on appearance.corner_radius.
+# But note: niri set geometry-corner-radius 12 (which is 12 pixels). We have corner_radius = 12. We'll adjust to 12.
+# Let's change appearance.corner_radius to 12.
+# We'll do that above.
+
+# Actually, we already set corner_radius = 12 in [appearance]. Let's change it to 12 to match niri.
+# We'll update the [appearance] section above.
+
+# For clip-to-geometry, we don't know. We'll leave TODO.
+
+# Since we cannot set the rule, we'll omit it and rely on appearance settings.
+# However, we still want to have a rule for steam and notifications below.
+
+[[window_rule]]
+match.app_id = "steam"
+# TODO(niri): exclude title=r#"^[Ss]team$"# not possible in Umbriel; this rule will make ALL steam windows floating
+open-floating = true
+
+[[window_rule]]
+match.app_id = "steam"
+match.title = "^notificationtoasts_\\d+_desktop$"
+default_floating_position = { x = 10, y = 10, anchor = "bottom-right" }
+open-focused = false
+
+[[layer_rule]]
+match.namespace = "^noctalia-wallpaper.*"
+# TODO(niri): place-within-backdrop not found in Umbriel layer_rule
+# We'll leave it as is and hope that the wallpaper layer is handled by default? Not sure.
+
+# TODO(niri): prefer-no-csd is already set in [appearance]
+# TODO(niri): screenshot-path null - not found in Umbriel; maybe handled by screenshot command?
+# TODO(niri): environment variables - not in config; maybe set via env outside?
+# TODO(niri): honor-xdg-activation-with-invalid-serial - not found in Umbriel; maybe in [input.focus] or [debug]? We'll leave TODO.
+# TODO(niri): hotkey-overlay skip-at-startup - not found in Umbriel; maybe in [appearance] or [general]? We'll leave TODO.

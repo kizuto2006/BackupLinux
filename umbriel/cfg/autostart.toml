@@ -1,0 +1,3 @@
+[general]
+autostart = ["noctalia", "fcitx5 -d", "microsoft-edge-stable"]
+#general.show_cheatsheet = false

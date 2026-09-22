@@ -1,0 +1,210 @@
+[keybinds]
+
+# ────────────── Applications ──────────────
+
+"Mod+Return" = "spawn:alacritty"
+"Mod+B" = "spawn:microsoft-edge"
+"Mod+Z" = "spawn:zeditor"
+"Mod+C" = "spawn:code"
+"Mod+E" = "spawn:thunar"
+
+
+# ────────────── Window navigation ──────────────
+
+"Mod+Q" = "window-close"
+
+"Alt+Tab" = "spawn:noctalia msg window-switcher"
+
+"Mod+Left" = "window-focus-left"
+# "Mod+H" = "window-focus-left"
+
+"Mod+Right" = "window-focus-right"
+# "Mod+L" = "window-focus-right"
+
+# "Mod+K" = "window-focus-up"
+# "Mod+J" = "window-focus-down"
+
+"Mod+Ctrl+Left" = "column-move-left"
+# "Mod+Ctrl+H" = "column-move-left"
+
+"Mod+Ctrl+Right" = "column-move-right"
+# "Mod+Ctrl+L" = "column-move-right"
+
+# "Mod+Ctrl+K" = "window-move-up"
+# "Mod+Ctrl+J" = "window-move-down"
+
+# "Mod+Home" = "column-focus-first"
+# "Mod+End" = "column-focus-last"
+
+# "Mod+Ctrl+Home" = "column-move-to-first"
+# "Mod+Ctrl+End" = "column-move-to-last"
+
+
+# ────────────── Monitor navigation ──────────────
+
+"Mod+Shift+Left" = "output-focus-left"
+"Mod+Shift+Right" = "output-focus-right"
+"Mod+Shift+Up" = "output-focus-up"
+"Mod+Shift+Down" = "output-focus-down"
+
+"Mod+Shift+Ctrl+Left" = "column-move-to-output-left"
+"Mod+Shift+Ctrl+Right" = "column-move-to-output-right"
+"Mod+Shift+Ctrl+Up" = "column-move-to-output-up"
+"Mod+Shift+Ctrl+Down" = "column-move-to-output-down"
+
+
+# ────────────── Workspace navigation ──────────────
+
+"Mod+WheelDown" = { action = "workspace-next", cooldown_ms = 150 }
+"Mod+WheelUp" = { action = "workspace-previous", cooldown_ms = 150 }
+
+"Mod+Down" = { action = "workspace-next", cooldown_ms = 150 }
+"Mod+Up" = { action = "workspace-previous", cooldown_ms = 150 }
+
+"Mod+Ctrl+WheelDown" = "column-move-to-workspace-next"
+"Mod+Ctrl+WheelUp" = "column-move-to-workspace-previous"
+
+"Mod+Ctrl+Down" = "column-move-to-workspace-next"
+"Mod+Ctrl+Up" = "column-move-to-workspace-previous"
+
+
+# ────────────── Column navigation ──────────────
+
+"Mod+WheelRight" = "window-focus-right"
+"Mod+WheelLeft" = "window-focus-left"
+
+"Mod+Ctrl+WheelRight" = "column-move-right"
+"Mod+Ctrl+WheelLeft" = "column-move-left"
+
+"Mod+Shift+WheelDown" = "window-focus-right"
+"Mod+Shift+WheelUp" = "window-focus-left"
+
+"Mod+Ctrl+Shift+WheelDown" = "column-move-right"
+"Mod+Ctrl+Shift+WheelUp" = "column-move-left"
+
+
+# ────────────── Switch workspace ──────────────
+
+"Mod+1" = "workspace-switch:1"
+"Mod+2" = "workspace-switch:2"
+"Mod+3" = "workspace-switch:3"
+"Mod+4" = "workspace-switch:4"
+"Mod+5" = "workspace-switch:5"
+"Mod+6" = "workspace-switch:6"
+"Mod+7" = "workspace-switch:7"
+"Mod+8" = "workspace-switch:8"
+"Mod+9" = "workspace-switch:9"
+
+
+# ────────────── Move column to workspace ──────────────
+
+"Mod+Ctrl+1" = "column-move-to-workspace:1"
+"Mod+Ctrl+2" = "column-move-to-workspace:2"
+"Mod+Ctrl+3" = "column-move-to-workspace:3"
+"Mod+Ctrl+4" = "column-move-to-workspace:4"
+"Mod+Ctrl+5" = "column-move-to-workspace:5"
+"Mod+Ctrl+6" = "column-move-to-workspace:6"
+"Mod+Ctrl+7" = "column-move-to-workspace:7"
+"Mod+Ctrl+8" = "column-move-to-workspace:8"
+"Mod+Ctrl+9" = "column-move-to-workspace:9"
+
+
+# ────────────── Noctalia ──────────────
+
+"Alt+Space" = "spawn:noctalia msg panel-toggle launcher"
+
+"Mod+Alt+L" = "spawn:noctalia msg session lock"
+
+"Alt+F4" = "spawn:noctalia msg panel-toggle session"
+
+"Mod+V" = "spawn:noctalia msg panel-toggle clipboard"
+
+"Mod+Period" = "spawn:noctalia msg panel-toggle launcher /emo"
+
+"Mod+Shift+S" = "spawn:noctalia msg screenshot-region"
+
+"Mod+W" = "spawn:noctalia msg panel-toggle wallpaper"
+
+
+# ────────────── Audio ──────────────
+
+"XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up"
+"XF86AudioLowerVolume" = "spawn:noctalia msg volume-down"
+"XF86AudioMute" = "spawn:noctalia msg volume-mute"
+
+"Ctrl+XF86AudioRaiseVolume" = "spawn:noctalia msg mic-volume-up"
+"Ctrl+XF86AudioLowerVolume" = "spawn:noctalia msg mic-volume-down"
+"Ctrl+XF86AudioMute" = "spawn:noctalia msg mic-mute"
+
+
+# ────────────── Media ──────────────
+
+"XF86AudioNext" = "spawn:noctalia msg media next"
+"XF86AudioPrev" = "spawn:noctalia msg media previous"
+
+"XF86AudioPlay" = "spawn:noctalia msg media toggle"
+"XF86AudioPause" = "spawn:noctalia msg media toggle"
+
+
+# ────────────── Brightness ──────────────
+
+"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up"
+"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down"
+
+
+# ────────────── Window & layout management ──────────────
+
+"Mod+Tab" = "workspace-focus-last"
+
+# Expand focused column to full available extent
+"Mod+Ctrl+F" = "window-set-primary-extent:1.0"
+
+# Center focused column
+"Mod+Shift+C" = "column-center"
+
+# Umbriel has no direct center-visible-columns action.
+# "Mod+Ctrl+C" = "column-center"
+
+
+# ────────────── Resize ──────────────
+
+# Primary extent -10% / +10%
+"Mod+Minus" = "window-modify-primary-extent:-0.1"
+"Mod+Equal" = "window-modify-primary-extent:0.1"
+
+# Secondary extent -10% / +10%
+"Mod+Shift+Minus" = "window-modify-secondary-extent:-0.1"
+"Mod+Shift+Equal" = "window-modify-secondary-extent:0.1"
+
+
+# ────────────── Window states ──────────────
+
+"Mod+T" = "window-toggle-floating"
+
+"Mod+Shift+F" = "window-toggle-fullscreen"
+
+"Mod+F" = "window-toggle-maximize"
+
+
+# ────────────── Screenshots ──────────────
+
+# Select region
+"Ctrl+Shift+1" = "spawn:noctalia msg screenshot-region"
+
+# Screenshot focused monitor
+"Ctrl+Shift+2" = "spawn:noctalia msg screenshot-fullscreen"
+
+# No direct screenshot-window action in Umbriel or Noctalia.
+# "Ctrl+Shift+3" = "screenshot-window"
+
+
+# ────────────── System ──────────────
+
+# Quit Umbriel with confirmation
+"Ctrl+Alt+Delete" = "session-quit"
+
+# Turn off all monitors
+"Mod+Shift+P" = "dpms-off"
+
+# Toggle overview
+"Mod+O" = { action = "overview-toggle", repeat = false }

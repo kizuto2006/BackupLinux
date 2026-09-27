@@ -9,30 +9,44 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-
-  # Use the Limine boot loader.
-  boot.loader.limine.enable = true;
-  boot.loader.limine.secureBoot.enable = true; #Bật SecureBoot cho Limine
-  boot.loader.timeout = 5;                    # giây chờ ở menu
-  boot.loader.limine.maxGenerations = 10;     # giữ tối đa 10 bản trong menu, đỡ đầy ESP
-  boot.loader.limine.style = {
-    wallpapers = [ ./boot-wallpaper.jpg ];
-    wallpaperStyle = "stretched";
-
-    # Ẩn tiêu đề trên đầu, giống CachyOS
-    interface.branding = "";
-
-    # Bảng màu Catppuccin Mocha giống CachyOS
-    graphicalTerminal = {
-      palette = "1e1e2e;f38ba8;a6e3a1;f9e2af;89b4fa;f5c2e7;94e2d5;cdd6f4";
-      brightPalette = "585b70;f38ba8;a6e3a1;f9e2af;89b4fa;f5c2e7;94e2d5;cdd6f4";
-      foreground = "cdd6f4";
-      brightForeground = "cdd6f4";
-      background = "ffffffff";        # trong suốt hoàn toàn, để lộ ảnh nền
-      brightBackground = "ffffffff";
-    };
-  };
+  #Boot config
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.timeout = 5; # Giây chờ ở menu (khai báo chung của boot.loader)
+
+  # Cấu hình Limine boot loader
+  boot.loader.limine = {
+    enable = true;
+    secureBoot.enable = true; # Bật SecureBoot cho Limine
+    maxGenerations = 10;      # Giữ tối đa 10 bản trong menu, đỡ đầy ESP
+
+    style = {
+      wallpapers = [ ./boot-wallpaper.jpg ];
+      wallpaperStyle = "stretched";
+
+      # Ẩn tiêu đề trên đầu, giống CachyOS
+      interface.branding = "";
+
+      # Bảng màu Catppuccin Mocha giống CachyOS
+      graphicalTerminal = {
+        palette = "1e1e2e;f38ba8;a6e3a1;f9e2af;89b4fa;f5c2e7;94e2d5;cdd6f4";
+        brightPalette = "585b70;f38ba8;a6e3a1;f9e2af;89b4fa;f5c2e7;94e2d5;cdd6f4";
+        foreground = "cdd6f4";
+        brightForeground = "cdd6f4";
+        background = "ffffffff";       # Trong suốt hoàn toàn, để lộ ảnh nền
+        brightBackground = "ffffffff";
+      };
+    };
+
+    # Thêm tùy chọn boot Windows 11
+    extraEntries = ''
+      /Other
+      //Windows 11
+      protocol: efi_chainload
+      image_path: boot():/EFI/Microsoft/Boot/bootmgfw.efi
+      
+      # Bạn có thể thêm các hệ điều hành khác ở đây (//Ubuntu, //Arch...) sau này
+    '';
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -80,9 +94,6 @@
       };
     };
   };
-
-  # Để Edge (Chromium) chạy bằng Wayland và nhận bộ gõ
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -99,6 +110,11 @@
     packages = with pkgs; [];
   };
 
+  environment.sessionVariables = {
+    XCURSOR_THEME = "macOS";    #Thêm apple cursor
+    XCURSOR_SIZE = "24";
+    NIXOS_OZONE_WL = "1";  # Để Edge (Chromium) chạy bằng Wayland và nhận bộ gõ
+  };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -106,7 +122,8 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     alacritty 
-    kdePackages.dolphin 
+    bottom
+    nautilus
     fastfetch 
     sbctl
     microsoft-edge
@@ -114,7 +131,11 @@
     jellyfin-desktop
     vscode-fhs
     discord
-    gh 
+    gh
+    apple-cursor
+    brave
+    unityhub
+    drawy
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -139,15 +160,6 @@
   programs.fish.shellAliases = {
     nixcon = "nano /etc/nixos/configuration.nix";
   };
-  #file manager: thunar cùng extension
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs; [ thunar-archive-plugin thunar-volman ];
-  };
-  services.gvfs.enable = true;    # SFTP, SMB, thùng rác
-  services.tumbler.enable = true; # ảnh xem trước
-  #an-anime-game-launcher = genshin
-  programs.anime-game-launcher.enable = true;
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
@@ -168,11 +180,6 @@
     recommendedServices.enable = true;
   };
   
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox;
-  };
-  
   services.displayManager.noctalia-greeter.enable = true;
 
   services.tailscale.enable = true;
@@ -180,7 +187,10 @@
   # Driver NVIDIA (dòng này cần dù bạn dùng Wayland, để chặn nouveau)
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   hardware.nvidia = {
     modesetting.enable = true;   # bắt buộc cho Wayland
@@ -201,6 +211,11 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
+
+  hardware.opentabletdriver.enable = true;
+
+  hardware.uinput.enable = true;
+  boot.kernelModules = [ "uinput" ];
 
   # List services that you want to enable:
 

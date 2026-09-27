@@ -9,11 +9,6 @@
       url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #Genshin Launcher
-    aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -24,8 +19,6 @@
         inputs.noctalia.nixosModules.default
         inputs.umbriel.nixosModules.default 
 	inputs.noctalia-greeter.nixosModules.default
-
-	inputs.aagl.nixosModules.default
       ];
     };
   };

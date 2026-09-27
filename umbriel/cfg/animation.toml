@@ -5,13 +5,17 @@ curve = "easeout"
 
 [animation.windows_in]
 enabled = true
-duration_ms = 200
-curve = "ease-out-quad"
+duration_ms = 240
+curve = "0.3333333333,0.6666666667,0.6666666667,1"
+style = "none"
+shader = "../shaders/circular-iris-tl.glsl"
 
 [animation.windows_out]
 enabled = true
-duration_ms = 200
-curve = "ease-out-cubic"
+duration_ms = 240
+curve = "0.3333333333,0.6666666667,0.6666666667,1"
+style = "fade"
+shader = "../shaders/circular-iris-tl.glsl"
 
 [animation.windows_move]
 enabled = true

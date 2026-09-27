@@ -13,7 +13,8 @@
 
 "Mod+Q" = "window-close"
 
-"Alt+Tab" = "spawn:noctalia msg window-switcher"
+"Alt+Tab" = "window-focus-next"
+"Alt+Shift+Tab" = "window-focus-previous"
 
 "Mod+Left" = "window-focus-left"
 # "Mod+H" = "window-focus-left"

@@ -6,15 +6,14 @@
 "Mod+B" = "spawn:microsoft-edge"
 "Mod+Z" = "spawn:zeditor"
 "Mod+C" = "spawn:code"
-"Mod+E" = "spawn:thunar"
+"Mod+E" = "spawn:nautilus"
 
 
 # ────────────── Window navigation ──────────────
 
 "Mod+Q" = "window-close"
 
-"Alt+Tab" = "window-focus-next"
-"Alt+Shift+Tab" = "window-focus-previous"
+"Alt+Tab" = "spawn:noctalia msg window-switcher"
 
 "Mod+Left" = "window-focus-left"
 # "Mod+H" = "window-focus-left"
@@ -42,6 +41,7 @@
 
 
 # ────────────── Monitor navigation ──────────────
+"Mod+f1" = "spawn:fish -c toggle-edp"
 
 "Mod+Shift+Left" = "output-focus-left"
 "Mod+Shift+Right" = "output-focus-right"

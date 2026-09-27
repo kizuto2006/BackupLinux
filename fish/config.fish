@@ -10,7 +10,7 @@ if status is-interactive
     set fish_greeting "  Đây là máy chính"
 end
 
-alias check="niri validate"
+alias check="umbriel validate"
 alias cl='clear'
 function homeserver
     # Nếu chỉ gõ "homeserver" không có tham số -> Chui thẳng vào SSH

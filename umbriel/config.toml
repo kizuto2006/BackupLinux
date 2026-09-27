@@ -6,5 +6,9 @@ files = [
     "cfg/display.toml",
     "cfg/input.toml",
     "cfg/layout.toml",
+    "cfg/window_rule.toml",
     "cfg/autostart.toml",
 ]
+
+[include.optional]
+files = ["noctalia.toml"]

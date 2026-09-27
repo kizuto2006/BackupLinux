@@ -1,0 +1,17 @@
+# Genshin - cửa sổ render chính không được tự giành focus
+[[window_rule]]
+match.app_id = "^steam_app_3939183206$"
+match.title = "^Genshin Impact$"
+
+default_focused = false
+focus_on_activate = false
+
+
+# Genshin - Xwayland input/helper window
+[[window_rule]]
+match.app_id = "^steam_app_3939183206$"
+match.title = "^-$"
+
+default_floating = true
+default_focused = true
+focus_on_activate = true

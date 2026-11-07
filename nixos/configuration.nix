@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -17,7 +17,7 @@
   boot.loader.limine = {
     enable = true;
     secureBoot.enable = true; # Bật SecureBoot cho Limine
-    maxGenerations = 10;      # Giữ tối đa 10 bản trong menu, đỡ đầy ESP
+    maxGenerations = 5;      # Giữ tối đa 10 bản trong menu, đỡ đầy ESP
 
     style = {
       wallpapers = [ ./boot-wallpaper.jpg ];
@@ -41,8 +41,8 @@
     extraEntries = ''
       /Other
       //Windows 11
-      protocol: efi_chainload
-      image_path: boot():/EFI/Microsoft/Boot/bootmgfw.efi
+      protocol: efi_boot_entry
+      entry: Windows Boot Manager
       
       # Bạn có thể thêm các hệ điều hành khác ở đây (//Ubuntu, //Arch...) sau này
     '';
@@ -130,12 +130,30 @@
     feishin
     jellyfin-desktop
     vscode-fhs
+    neovim
     discord
     gh
     apple-cursor
     brave
     unityhub
     drawy
+    #inputs.iloader.packages.${pkgs.system}.default
+    #Chỉ để học python 
+    #jetbrains.pycharm
+    (python313.withPackages (ps: with ps; [
+      pip
+      ipykernel
+      numpy
+      pandas
+    ]))
+    #Cài dotnet để code unity
+    (dotnetCorePackages.combinePackages [
+      dotnetCorePackages.sdk_8_0
+      #dotnetCorePackages.sdk_9_0
+    ])
+    #Rust để thử 
+    rustup
+    gcc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -174,15 +192,26 @@
   };
 
   programs.umbriel.enable = true;
+
+  #programs.niri.enable = true;
   
   programs.noctalia = {
     enable = true;
     recommendedServices.enable = true;
   };
+
+  #programs.steam = {
+  #  enable = true;
+  #};
   
   services.displayManager.noctalia-greeter.enable = true;
 
   services.tailscale.enable = true;
+
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
+  services.usbmuxd.enable = true; 
 
   # Driver NVIDIA (dòng này cần dù bạn dùng Wayland, để chặn nouveau)
   services.xserver.videoDrivers = [ "nvidia" ];

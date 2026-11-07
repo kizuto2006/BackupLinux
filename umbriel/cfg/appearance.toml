@@ -36,8 +36,8 @@ shadow = "#23263470"
 [colors.border]
 focused = "#babbf1"
 unfocused = "#000000"
-scratchpad_focused = "#babbf1"
-scratchpad_unfocused = "#000000"
+#scratchpad_focused = "#babbf1"
+#scratchpad_unfocused = "#000000"
 outer = "#000000"
 
 [colors.overview]

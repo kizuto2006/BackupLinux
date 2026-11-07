@@ -12,11 +12,14 @@ backdrop = "#363a4fFF"
 [colors.border]
 focused = "#b7bdf8FF"
 unfocused = "#363a4fFF"
-scratchpad_focused = "#c6a0f6FF"
-scratchpad_unfocused = "#6611d3FF"
 outer = "#24273aFF"
 
 [colors.overview]
 background_tint = "#24273a88"
 badge = "#b7bdf8FF"
 workspace_background = "#24273aFF"
+
+[[window_rule]]
+match.is_scratchpad = true
+border_color_focused = "#c6a0f6FF"
+border_color_unfocused = "#6611d3FF"

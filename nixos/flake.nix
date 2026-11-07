@@ -7,8 +7,9 @@
     umbriel.url = "git+https://github.com/noctalia-dev/umbriel";
     noctalia-greeter = {
       url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
+    #iloader.url = "github:nab138/iloader";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {

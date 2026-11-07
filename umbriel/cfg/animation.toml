@@ -3,19 +3,21 @@ enabled = true
 duration_ms = 250
 curve = "easeout"
 
+[effects.preset.circular_iris_tl]
+kind = "animation"
+shader = "../shaders/circular-iris-tl.glsl"
+
 [animation.windows_in]
 enabled = true
 duration_ms = 200
 curve = "0.3333333333,0.6666666667,0.6666666667,1"
-style = "none"
-shader = "../shaders/circular-iris-tl.glsl"
+effect = "circular_iris_tl"
 
 [animation.windows_out]
 enabled = true
 duration_ms = 200
 curve = "0.3333333333,0.6666666667,0.6666666667,1"
-style = "fade"
-shader = "../shaders/circular-iris-tl.glsl"
+effect = "circular_iris_tl"
 
 [animation.windows_move]
 enabled = true

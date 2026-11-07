@@ -1,1 +1,3 @@
-/home/kizuto/BackupLinux/fish/functions/toggle-edp.fish
+function toggle-edp
+    umbriel msg output-toggle:eDP-1
+end

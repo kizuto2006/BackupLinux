@@ -143,6 +143,10 @@
 "XF86AudioNext" = "spawn:noctalia msg media next"
 "XF86AudioPrev" = "spawn:noctalia msg media previous"
 
+"Alt+F3" = "spawn:noctalia msg media next"
+"Alt+F2" = "spawn:noctalia msg media previous"
+"Alt+F1" = "spawn:noctalia msg media toggle"
+
 "XF86AudioPlay" = "spawn:noctalia msg media toggle"
 "XF86AudioPause" = "spawn:noctalia msg media toggle"
 

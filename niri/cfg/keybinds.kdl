@@ -17,7 +17,7 @@ binds {
     // ===================Custom===================
     Mod+Shift+ESCAPE                    hotkey-overlay-title="Show Keybindings: keybind-cheatsheet" { spawn-sh "noctalia msg panel-toggle kenn/keybind-cheatsheet"; }
     //CTRL+Shift+ESCAPE                   hotkey-overlay-title="Show System Monitor: systemMonitor" { spawn-sh "qs -c noctalia-shell ipc call systemMonitor toggle"; }
-    Mod+V                               hotkey-overlay-title="Show Clipboard: Clipper" { spawn-sh "noctalia msg panel-toggle blackbartblues/clipper:panel";}
+    Mod+V                               hotkey-overlay-title="Show Clipboard" { spawn-sh "noctalia msg panel-toggle clipboard";}
     Mod+Period                          hotkey-overlay-title="Open Emoji Picker: launcher emoji" { spawn-sh "noctalia msg panel-toggle launcher '/emo'"; }
     Mod+Shift+S                         hotkey-overlay-title="Take Screenshot" { spawn-sh "noctalia msg screenshot-region";}
     Mod+Z                               hotkey-overlay-title="Open: zed" { spawn-sh "zeditor"; }

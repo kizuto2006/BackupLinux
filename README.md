@@ -1,3 +1,5 @@
+#Note:This branche is forbiden and nixos are appear on main branche
+
 **This is my config for:**  
 **-Niri Noctalia-qs (plugin:clipper,screenshot,keybindsheatsheet)**  
 **-Zed editor (compile&run by F5 keybind,only compile by Shift+F5)**  
